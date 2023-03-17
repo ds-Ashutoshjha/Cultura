@@ -38,38 +38,18 @@ export const config: TemplateConfig = {
       "slug",
       // "c_locatorBannerImage",
       // "c_locatorBannerTitle",
-      // "dm_directoryParents.name",
-      // "dm_directoryParents.slug",
-      // "dm_directoryParents.meta.entityType",
-      // "dm_directoryChildren.name",
-      // "dm_directoryChildren.address",
-      // "dm_directoryChildren.slug",
-      // "dm_directoryChildren.dm_directoryChildren.name",
-      // "dm_directoryChildren.dm_directoryChildrenCount",
-      // "dm_directoryChildren.dm_directoryChildren.slug",
-      // "dm_directoryChildren.dm_directoryChildren.dm_directoryChildren.name",
-      // "dm_directoryChildren.dm_directoryChildren.dm_directoryChildren.slug"
-      "dm_directoryChildren.name",
-      "dm_directoryChildren.id",
-      "dm_directoryChildren.slug",
-      // "dm_directoryChildren.dm_directoryChildrenCount",
-      "dm_directoryChildren.meta.entityType",
-
-      // "dm_directoryChildren.dm_directoryChildren.name",
-      // "dm_directoryChildren.dm_directoryChildren.id",
-      // "dm_directoryChildren.dm_directoryChildren.slug",
-      // "dm_directoryChildren.dm_directoryChildren.dm_directoryChildrenCount",
-      // "dm_directoryChildren.dm_directoryChildren.meta.entityType",
-
-      // "dm_directoryChildren.dm_directoryChildren.dm_directoryChildren.name",
-      // "dm_directoryChildren.dm_directoryChildren.dm_directoryChildren.id",
-      // "dm_directoryChildren.dm_directoryChildren.dm_directoryChildren.slug",
-      // "dm_directoryChildren.dm_directoryChildren.dm_directoryChildren.meta.entityType",
-
-      "dm_directoryParents.id",
       "dm_directoryParents.name",
       "dm_directoryParents.slug",
       "dm_directoryParents.meta.entityType",
+      "dm_directoryChildren.name",
+      "dm_directoryChildren.address",
+      "dm_directoryChildren.slug",
+      "dm_directoryChildren.dm_directoryChildren.name",
+      // "dm_directoryChildren.dm_directoryChildrenCount",
+      "dm_directoryChildren.dm_baseEntityCount",
+      "dm_directoryChildren.dm_directoryChildren.slug",
+      "dm_directoryChildren.dm_directoryChildren.dm_directoryChildren.name",
+      "dm_directoryChildren.dm_directoryChildren.dm_directoryChildren.slug"
     ],
     // Defines the scope of entities that qualify for this stream.
     filter: {
@@ -228,7 +208,7 @@ const country: Template<TemplateRenderProps> = ({
 
   const childrenDivs =   dm_directoryChildren &&
   dm_directoryChildren?.map((entity: any) => {
-    if (entity?.dm_directoryChildrenCount == 1) {
+    if (entity?.dm_baseEntityCount == 1) {
       entity.dm_directoryChildren?.map((i: any) => {
         i.dm_directoryChildren?.map((e: any) => {
           var name: any = e.name.toLowerCase();
@@ -236,14 +216,14 @@ const country: Template<TemplateRenderProps> = ({
           let result: any = string.replaceAll(" ", "-");
 
 
-          slugs = stagingBaseurl+'/'+slug+'/'+entity.slug + ".html";
+          slugs = slug+'/'+entity.slug + ".html";
         });
       });
     
       return (
         <div className="w-1/2 storelocation-category md:w-1/3 lg:w-1/4 px-4">
           <a key={entity.slug} href={slugs} className="hover:text-red">
-            {entity.name} ({entity.dm_directoryChildrenCount})
+            {entity.name} ({entity.dm_baseEntityCount})
           </a>
         </div>
       );
@@ -253,7 +233,7 @@ const country: Template<TemplateRenderProps> = ({
       return (
         <div className="w-1/2 storelocation-category md:w-1/3 lg:w-1/4 px-4 test">
           <a key={entity.slug} href={slug} className="hover:text-red">
-            {entity.name} ({entity.dm_directoryChildrenCount})
+            {entity.name} ({entity.dm_baseEntityCount})
           </a>
         </div>
       );

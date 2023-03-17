@@ -645,8 +645,7 @@ input#form1 {
   background: #FFFFFF;
  border-radius:50px;
  margin-top: 25px;
-  color: white;
-  border-block-color: revert;
+ border-block-color: revert;
 }
 .flex.space-x-8.text.-\32 \*1 {
   display: flex;
