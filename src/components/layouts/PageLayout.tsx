@@ -25,7 +25,7 @@ const PageLayout = ({
 
   return (
     <>
-      {/* <Header c_headerLogo={global?.c_headerLogo}/> */}
+      {/* <Header/> */}
 
       {children}
       <Footer _site={_site} />

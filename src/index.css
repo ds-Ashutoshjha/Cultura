@@ -834,18 +834,16 @@ button.flexx.pt-6 {
   font-family: 'Lexend Deca', sans-serif;
   color: #014988;
 }
-.g-5px {
-  margin: 30px;
-  gap: 12px;
-  justify-content: center;
-  text-align: center;
+.flex.gap-5 {
   display: flex;
-  padding: 10px;
-  width: 1043px;
-  gap: -21px;
- display: inline-flex;
-  flex-wrap: wrap;
+  vertical-align: inherit;
+  gap: 125px;
+  font-weight: bold;
+  color: #00417a;
+  line-height: 2rem;
+  box-sizing: border-box;
 }
+
 .icon.text-black.relative {
   background-color: maroon;
 }
@@ -853,3 +851,25 @@ button.flexx.pt-6 {
 .OpenCloseStatus .daylist{@apply hidden}
 .location .location-info .open-close{ @apply flex items-start   flex-row justify-between pl-0  sm:pl-0 md:pl-0 xl:pl-0 2xl:pl-0  leading-7}
 .location .location-info .open-close .OpenCloseStatus{@apply pr-5 pl-0   w-[300px]   relative   xl:pr-4 2xl:pr-5 border-none text-sm xl:text-xs 2xl:text-sm } 
+.flex {
+  display: flex;
+  margin-left: 1rem;
+  width: -45rem;
+  text-align: left!important;
+  /* color: white; */
+}
+li {
+  font-size: 10px;
+  margin-right: -61px;
+}
+.flex.left-5 {
+  margin-left: 82rem;
+  width: -2px;
+  gap: 12px;
+}
+img, video {
+  max-width: 85%;
+  height: auto;
+  gap: 2px;
+  margin-left: 8px;
+}

@@ -94,7 +94,7 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
   //         })
 
   return {
-    title: `${document.c_meta_title?document.c_meta_title:`MGM Stores in ${document.name} | Find a Local Store`}`,
+    title: `${document.c_meta_title?document.c_meta_title:`Cultura Stores in ${document.name} | Find a Local Store`}`,
     charset: "UTF-8",
     viewport: "width=device-width, initial-scale=1",
     tags: [
@@ -475,7 +475,7 @@ c_headerHeadline={_site.c_headerHeadline} c_bottromheader={_site.c_bottromheader
           <div className="container mx-auto">
             <div className="sec-title">
               <h2>
-              MGM stores in {name}
+              Cultura stores in {name}
               </h2>
             </div>
             <div className="flex flex-wrap justify-center items-start -mx-2.5 lg:-mx-[.9375rem]">

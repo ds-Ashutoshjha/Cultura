@@ -33,13 +33,13 @@ const Header = (props: data) => {
             }}
             className="flex space-x-8 text -2*1"
           >
-            {labels.map((head: any) => {
+            {labels?.map((head: any) => {
               // console.log('head', head)
               return (
                 <>
                   <div className="header_menu">
                     <ul>
-                      <li>{head.label}</li>
+                      <li>{head?.label}</li>
                     </ul>
                   </div>
                 </>
@@ -51,7 +51,7 @@ const Header = (props: data) => {
         <div className="flex" style={{ backgroundColor: "#5459bb" }}>
           <img
             style={{ width: "8%", height: "3%", marginTop: "20px" }}
-            src={c_headerLogo.url}
+            src={c_headerLogo?.url}
           />
           <div id="search-autocomplete" className="input#form1">
             <input
@@ -87,19 +87,19 @@ const Header = (props: data) => {
           </div>
           <div className="contentforNav">
             <a className="flex space-x-4 navbar-item">
-              {c_headernavbariteam.map((image: any) => {
+              {c_headernavbariteam?.map((image: any) => {
                 // console.log('image',image)
 
                 return (
                   <>
                     <div>
-                      <a href="">{image.label.label}</a>
+                      <a href="">{image.label?.label}</a>
                     </div>
 
                     <div className="navbar">
                       <img
                         style={{ width: "30px", height: "30px" }}
-                        src={image.icon.url}
+                        src={image.icon?.url}
                       />
                     </div>
                   </>
@@ -110,33 +110,33 @@ const Header = (props: data) => {
         </div>
         {/* <img src={searchIcon}></img> */}
 
-        <div className="flex">
-          <div className="g-5px">
-            <ul>
-              {c_headerHeadline.map((head: any) => {
-                <li> {head.label}</li>;
-              })}
-            </ul>
-          </div>
-          <div className="flex">
-            {c_bottromheader.map((data: any) => {
-              return (
-                <>
-                  <div className="flex">
-                    <img
-                      style={{
-                        width: "30px",
-                        height: "30px",
-                        borderRadius: "30px",
-                      }}
-                      src={data.icon.url}
-                    />
-                    <a href="">{data.label.label}/</a>
-                  </div>
-                </>
-              );
-            })}
-          </div>
+        <div className="flex gap-5">
+          {c_headerHeadline?.map((head: any) => {
+            return (
+              <>
+                <div className="">{head?.label}</div>
+              </>
+            );
+          })}
+        </div>
+        <div className="flex left-5">
+          {c_bottromheader?.map((data: any) => {
+            return (
+              <>
+                <div className="flex">
+                  <img
+                    style={{
+                      width: "30px",
+                      height: "30px",
+                      borderRadius: "30px",
+                    }}
+                    src={data.icon?.url}
+                  />
+                  <a href="">{data.label?.label}/</a>
+                </div>
+              </>
+            );
+          })}
         </div>
       </>
     </>
